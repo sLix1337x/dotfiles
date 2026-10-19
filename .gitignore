@@ -1,0 +1,10 @@
+# Backups written by the installers
+*.bak
+*.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9].bak
+
+# Machine-local git identity - never commit this
+.gitconfig.local
+
+# OS noise
+.DS_Store
+Thumbs.db

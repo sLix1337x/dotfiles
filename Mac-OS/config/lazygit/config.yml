@@ -1,0 +1,32 @@
+gui:
+  border: rounded
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - '#9ccfd8'
+      - bold
+    inactiveBorderColor:
+      - '#6e6a86'
+    searchingActiveBorderColor:
+      - '#f6c177'
+      - bold
+    optionsTextColor:
+      - '#c4a7e7'
+    selectedLineBgColor:
+      - '#26233a'
+    selectedRangeBgColor:
+      - '#26233a'
+    cherryPickedCommitBgColor:
+      - '#403d52'
+    cherryPickedCommitFgColor:
+      - '#c4a7e7'
+    unstagedChangesColor:
+      - '#eb6f92'
+    defaultFgColor:
+      - '#e0def4'
+
+git:
+  paging:
+    colorArg: always
+    # delta with side-by-side diff inside lazygit
+    pager: delta --dark --paging=never --line-numbers --side-by-side

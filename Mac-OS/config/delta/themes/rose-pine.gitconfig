@@ -1,0 +1,21 @@
+# Rose Pine theme for delta. Referenced by .gitconfig via
+#   [delta] include = ~/.config/delta/themes/rose-pine.gitconfig
+[delta "rose-pine"]
+	dark = true
+	syntax-theme = Nord
+	file-style = "#c4a7e7" bold
+	file-decoration-style = "#26233a" ul
+	hunk-header-style = "#9ccfd8"
+	hunk-header-decoration-style = "#26233a" box
+	line-numbers-left-style = "#6e6a86"
+	line-numbers-right-style = "#6e6a86"
+	line-numbers-zero-style = "#6e6a86"
+	line-numbers-minus-style = "#eb6f92"
+	line-numbers-plus-style = "#31748f"
+	minus-style = syntax "#2d1f2a"
+	minus-emph-style = syntax "#4a2b3a"
+	plus-style = syntax "#1c2b2b"
+	plus-emph-style = syntax "#24413f"
+	zero-style = syntax
+	whitespace-error-style = "#eb6f92" reverse
+	blame-palette = "#191724 #1f1d2e #26233a"

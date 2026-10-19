@@ -1,0 +1,142 @@
+// Zed settings
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // Theme: Rosé Pine bleibt erhalten
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Rosé Pine"
+  },
+
+  // Icons auf dunkles Catppuccin-Mocha für besseren Kontrast zu Rosé Pine
+  "icon_theme": "Catppuccin Mocha",
+
+  // Font: FiraCode Nerd Font Mono mit etwas mehr Gewicht für Retina-Displays
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_size": 14.0,
+  "buffer_font_weight": 450,
+  "buffer_line_height": {
+    "custom": 1.6
+  },
+
+  // UI-Font: System-Standard auf macOS für konsistentes Look & Feel
+  "ui_font_size": 15,
+
+  // Zeilenlänge & Umbrechen
+  "preferred_line_length": 80,
+  "soft_wrap": "preferred_line_length",
+  "show_wrap_guides": true,
+
+  // Relative Zeilennummern für schnellere Navigation
+  "relative_line_numbers": "enabled",
+
+  // Minimap deaktiviert: nimmt horizontalen Platz weg und lenkt ab
+  "minimap": {
+    "enabled": false
+  },
+
+  // Subtile Indent-Guides
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "indent-active",
+    "line_width": 1
+  },
+
+  // Toolbar: nur das Nötigste
+  "toolbar": {
+    "breadcrumbs": true,
+    "code_actions": true,
+    "selections_menu": true,
+    "quick_actions": true,
+    "agent_review": false
+  },
+
+  // Gutter: clean, aber mit wichtigen Infos
+  "gutter": {
+    "line_numbers": true,
+    "folds": true,
+    "bookmarks": true,
+    "breakpoints": true,
+    "runnables": true,
+    "min_line_number_digits": 0
+  },
+
+  // Scrollbar: vertikal nur, horizontal nur wenn nötig
+  "scrollbar": {
+    "axes": {
+      "vertical": true,
+      "horizontal": false
+    },
+    "selected_text": true,
+    "search_results": true,
+    "git_diff": true,
+    "cursors": true
+  },
+
+  // Basis-Editierverhalten
+  "base_keymap": "VSCode",
+  "hard_tabs": false,
+  "tab_size": 4,
+  "auto_indent_on_paste": true,
+  "hover_popover_enabled": true,
+
+  // Panels
+  "outline_panel": {
+    "expand_outlines_with_depth": 100
+  },
+  "excerpt_context_lines": 2,
+  "expand_excerpt_lines": 4,
+
+  // Scrollverhalten
+  "scroll_sensitivity": 1.0,
+  "vertical_scroll_margin": 3.0,
+  "horizontal_scroll_margin": 3.0,
+
+  // Snippets & Suche
+  "snippet_sort_order": "inline",
+
+  // Markdown-Preview
+  "markdown_preview": {
+    "max_width": 790.0
+  },
+
+  // Split-Verhalten
+  "minimum_split_diff_width": 97.0,
+
+  // Centered Layout deaktivieren: Editor nutzt die volle Fensterbreite
+  "centered_layout": {
+    "left_padding": 0,
+    "right_padding": 0
+  },
+
+  // JSX-Autovervollständigung
+  "jsx_tag_auto_close": {
+    "enabled": false
+  },
+
+  // Vim-Modus bleibt deaktiviert, aber Suchverhalten bleibt sinnvoll
+  "vim": {
+    "use_regex_search": true,
+    "gdefault": false,
+    "use_smartcase_find": false,
+    "toggle_relative_line_numbers": false
+  },
+
+  // KI-Agenten bleiben verfügbar
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  }
+}

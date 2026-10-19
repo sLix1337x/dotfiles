@@ -1,0 +1,22 @@
+# Global git settings. Installed to ~/.config/git/config, which git reads
+# alongside ~/.gitconfig - so your name/email there stay untouched.
+[core]
+	longpaths = true
+	autocrlf = input
+	safecrlf = warn
+	pager = delta
+[interactive]
+	diffFilter = delta --dark --syntax-theme=ayu-dark
+	diffFilterOpts = builtins,delta --dark --syntax-theme=ayu-dark
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = true
+[diff]
+	noprefix = false
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true
+[pull]
+	rebase = false

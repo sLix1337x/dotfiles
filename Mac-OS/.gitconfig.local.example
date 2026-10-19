@@ -1,0 +1,9 @@
+# Copy to ~/.gitconfig.local and fill in. Never commit this file.
+[user]
+	name  = Your Name
+	email = you@example.com
+
+# Optional: always reach GitHub over SSH, even when a remote uses an HTTPS URL.
+# Only enable this if you have SSH keys set up, otherwise HTTPS clones break.
+# [url "git@github.com:"]
+# 	insteadOf = https://github.com/

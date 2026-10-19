@@ -1,0 +1,31 @@
+# Everything the configs in this directory expect.
+#   brew bundle --file Mac-OS/Brewfile
+
+# Prompt & shell
+brew "starship"
+brew "zoxide"
+brew "tmux"
+
+# CLI tools
+brew "bat"
+brew "eza"
+brew "fzf"
+brew "ripgrep"
+brew "git-delta"
+brew "lazygit"
+brew "btop"
+brew "fastfetch"
+
+# Editors
+brew "neovim"
+
+# Terminals (cask)
+cask "alacritty"
+cask "kitty"
+cask "ghostty"
+
+# Editor (cask)
+cask "zed"
+
+# Font used by every terminal config here
+cask "font-caskaydia-cove-nerd-font"

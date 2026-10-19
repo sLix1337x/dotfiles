@@ -1,0 +1,168 @@
+# ~/.config/starship.toml — Catppuccin Macchiato powerline
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "catppuccin_macchiato"
+add_newline = false
+command_timeout = 300
+
+format = """
+[░▒▓](red)\
+$os\
+$username\
+[](fg:red bg:blue)\
+$directory\
+[](fg:blue bg:surface0)\
+$git_branch\
+$git_status\
+[](fg:surface0 bg:surface1)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:surface1 bg:base)\
+$time\
+[ ](fg:base)\
+\n$character"""
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol   = '[❯](bold red)'
+
+[os]
+disabled = false
+style = "bg:red fg:crust"
+
+[os.symbols]
+Macos   = "󰀵"
+Windows = ""
+Ubuntu  = "󰕈"
+Arch    = "󰣇"
+Fedora  = "󰣛"
+Debian  = "󰣚"
+Linux   = "󰌽"
+
+[username]
+show_always = false
+style_user  = "bg:red fg:crust"
+style_root  = "bg:red fg:crust"
+format      = '[ $user ]($style)'
+
+[directory]
+style             = "fg:crust bg:blue"
+format            = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol       = "~ "
+read_only         = "  "
+read_only_style   = "fg:crust bg:blue"
+
+[directory.substitutions]
+Documents = "󰈙 "
+Downloads = " "
+Music     = " "
+Pictures  = " "
+
+[git_branch]
+symbol           = ""
+style            = "bg:surface0"
+format           = '[[ $symbol $branch ](fg:lavender bg:surface0)]($style)'
+truncation_symbol = "…/"
+
+[git_status]
+style      = "bg:surface0"
+format     = '[[($all_status$ahead_behind )](fg:lavender bg:surface0)]($style)'
+up_to_date = ''
+conflicted = '[~$count](maroon)'
+untracked  = '[?$count](peach)'
+modified   = '[!$count](yellow)'
+staged     = '[+$count](green)'
+deleted    = '[-$count](red)'
+renamed    = '[»$count](mauve)'
+ahead      = '[⇡$count](teal)'
+behind     = '[⇣$count](yellow)'
+diverged   = '[⇡$ahead_count⇣$behind_count](peach)'
+stashed    = '[*$count](overlay2)'
+
+[nodejs]
+symbol = ""
+style  = "bg:surface1"
+format = '[[ $symbol ($version) ](fg:green bg:surface1)]($style)'
+
+[rust]
+symbol = ""
+style  = "bg:surface1"
+format = '[[ $symbol ($version) ](fg:peach bg:surface1)]($style)'
+
+[golang]
+symbol = ""
+style  = "bg:surface1"
+format = '[[ $symbol ($version) ](fg:sky bg:surface1)]($style)'
+
+[php]
+symbol = ""
+style  = "bg:surface1"
+format = '[[ $symbol ($version) ](fg:mauve bg:surface1)]($style)'
+
+[time]
+disabled    = false
+time_format = "%R"
+style       = "bg:base"
+format      = '[[  $time ](fg:text bg:base)]($style)'
+
+[hostname]
+ssh_only = true
+format   = '[@$hostname ](bg:red fg:crust bold)'
+disabled = false
+
+[cmd_duration]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[helm]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[terraform]
+disabled = true
+
+[palettes.catppuccin_macchiato]
+rosewater = "#ffe3f0"
+flamingo  = "#ffcbe3"
+pink      = "#ffaadf"
+mauve     = "#d7a8ff"
+red       = "#ff8fc7"
+maroon    = "#f5a8d1"
+peach     = "#ffbfd6"
+yellow    = "#f7d9e8"
+green     = "#cce6c9"
+teal      = "#d9d2ff"
+sky       = "#e2cfff"
+sapphire  = "#cdb5ff"
+blue      = "#b899ff"
+lavender  = "#ead7ff"
+text      = "#f2e7fa"
+subtext1  = "#d6c8e8"
+subtext0  = "#c3b2d9"
+overlay2  = "#a590bf"
+overlay1  = "#8d77a7"
+overlay0  = "#76628d"
+surface2  = "#5e4c74"
+surface1  = "#4a3b5e"
+surface0  = "#392d4a"
+base      = "#2b2138"
+mantle    = "#221a2d"
+crust     = "#1b1524"

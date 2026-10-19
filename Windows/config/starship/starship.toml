@@ -1,0 +1,81 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Top line works like the tmux status bar on macOS: context and path on the
+# left, $fill stretches to the window edge, live info sits on the right.
+format = """
+[┌─](bold green)$os$username[@](bold white)$hostname $directory$git_branch$git_status$fill$nodejs$python$cmd_duration$memory_usage$time
+[└─](bold green)$character"""
+
+add_newline = true
+
+[fill]
+symbol = "·"
+style = "black"
+
+[os]
+disabled = false
+style = "bold blue"
+
+[os.symbols]
+Windows = "🪟"
+
+[username]
+style_user = "bold cyan"
+style_root = "bold red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "bold green"
+disabled = false
+
+[directory]
+style = "bold yellow"
+truncation_length = 4
+truncate_to_repo = true
+format = "in [$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+# ── Right-hand side of the bar ───────────────────────────────────────────────
+
+[cmd_duration]
+min_time = 500
+format = "[  $duration]($style) "
+style = "bold yellow"
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = "󰍛 "
+format = "[ $symbol$ram_pct]($style) "
+style = "bold purple"
+
+[time]
+disabled = false
+time_format = "%a, %b %d  %H:%M"
+format = "[ $time ]($style)"
+style = "bg:blue fg:black bold"
+
+[python]
+symbol = " "
+format = "via [$symbol$pyenv_prefix($version )]($style)"
+
+[nodejs]
+symbol = " "
+format = "via [$symbol($version )]($style)"

@@ -1,0 +1,55 @@
+# Trimmed copy of ~/.codex/config.toml.
+# Left out on purpose: the local bundled-marketplace and MCP runtime paths, the
+# codex-router blocks, the per-project trust list and the hook hashes. All of
+# that is machine state Codex rewrites on its own.
+
+model = "gpt-5.6-luna"
+model_reasoning_effort = "medium"
+
+[features]
+multi_agent_v2 = { enabled = true, max_concurrent_threads_per_session = 6, expose_spawn_agent_model_overrides = true, usage_hint_enabled = true, root_agent_usage_hint_text = "When a child agent finishes (FINAL_ANSWER, task_complete, or an idle/errored wait snapshot), call interrupt_agent on that child so Codex can mark it done. Do not leave finished children in the working state." }
+
+[desktop]
+followUpQueueMode = "steer"
+external-agent-import-sync-item-types = "all"
+external-agent-import-sync-enabled = true
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = true
+
+[windows]
+sandbox = "elevated"
+
+[marketplaces.caveman]
+source_type = "git"
+source = "https://github.com/JuliusBrussee/caveman.git"
+
+[marketplaces.claude-plugins-official]
+source_type = "git"
+source = "https://github.com/anthropics/claude-plugins-official.git"
+
+[marketplaces.ponytail]
+source_type = "git"
+source = "https://github.com/DietrichGebert/ponytail.git"
+
+[marketplaces.diagram-design]
+source_type = "git"
+source = "https://github.com/cathrynlavery/diagram-design.git"
+
+[marketplaces.humanizer]
+source_type = "git"
+source = "https://github.com/blader/humanizer.git"
+
+[plugins."caveman@caveman"]
+enabled = true
+
+[plugins."ponytail@ponytail"]
+enabled = true
+
+[plugins."diagram-design@diagram-design"]
+enabled = true
+
+[plugins."humanizer@humanizer"]
+enabled = true
+
+[plugins."rust-analyzer-lsp@claude-plugins-official"]
+enabled = false

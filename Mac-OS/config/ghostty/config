@@ -1,0 +1,144 @@
+# ~/.config/ghostty/config — Rosé Pine, aligned with Kitty
+
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 14
+
+background = #201926
+# foreground = #f2e7fa  # (superseded)
+background-opacity = 0.5
+background-blur = true
+# background-image = ~/Pictures/background.jpg   # personal asset, not shipped
+background-image-opacity = 0.5
+background-image-fit = cover
+
+window-width = 120
+window-height = 45
+window-padding-x = 5
+window-padding-y = 5
+window-decoration = auto
+window-theme = auto
+window-show-tab-bar = always
+window-save-state = never
+
+scrollback-limit = 100000
+scrollbar = never
+
+cursor-style = block
+cursor-color = #ffaadf
+
+split-divider-color = #c4a7e7
+# custom-shader = ~/.config/ghostty/shaders/bloom.glsl   # shader not shipped
+custom-shader-animation = false
+
+macos-titlebar-style = transparent
+macos-window-shadow = true
+focus-follows-mouse = false
+shell-integration = detect
+notify-on-command-finish-action = no-bell,notify
+bell-features = no-system,no-audio,attention,title,border
+notify-on-command-finish-after = 10s
+
+env = PATH=${HOME}/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# Toad — opens a right split; type 't' to launch toad
+keybind = ctrl+shift+a=new_split:right
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+right=new_split:right
+keybind = ctrl+shift+down=new_split:down
+keybind = ctrl+shift+up=new_split:up
+keybind = ctrl+shift+left=new_split:left
+keybind = ctrl+shift+w=close_window
+keybind = ctrl+shift+page_up=previous_tab
+keybind = ctrl+shift+page_down=next_tab
+
+# Map Cmd+Z to the terminal undo key (Ctrl+_ / 0x1f) so zsh/readline undo works.
+keybind = super+z=text:\x1f
+
+# Global drop-down quick terminal (works even when Ghostty isn't focused)
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+# ── Enhancement pack (2026-07-19) ────────────────────────────────────────────
+
+# Split navigation: Cmd+Alt+arrows moves focus, Cmd+Alt+Z toggles split zoom.
+# Zoom survives focus changes instead of unzooming on every navigation.
+split-preserve-zoom = navigation
+keybind = super+alt+left=goto_split:left
+keybind = super+alt+right=goto_split:right
+keybind = super+alt+up=goto_split:up
+keybind = super+alt+down=goto_split:down
+keybind = super+alt+z=toggle_split_zoom
+
+# Quick terminal: animated drop-down on the screen containing the mouse.
+quick-terminal-position = top
+quick-terminal-screen = mouse
+quick-terminal-animation-duration = 0.2
+
+# Text rendering: crisper glyphs on Retina + guaranteed legibility
+# against the background image.
+font-thicken = true
+minimum-contrast = 2.5
+
+# Search matches in Rosé Pine (gold = candidates, rose = current match).
+search-foreground = #201926
+search-background = #ffaadf
+search-selected-foreground = #201926
+search-selected-background = #b899ff
+
+# Even out window padding; notify when a Ghostty update is available.
+window-padding-balance = true
+auto-update = check
+
+# ─────────── added by SpookiUI ───────────
+background-image-position = bottom-right
+background-image-repeat = true
+faint-opacity = 0.4
+osc-color-report-format = 16-bit
+palette = 0=#392d4a
+palette = 1=#ff8fc7
+palette = 2=#cce6c9
+palette = 3=#f7d9e8
+palette = 4=#b899ff
+palette = 5=#ffaadf
+palette = 6=#cdb5ff
+palette = 7=#d6c8e8
+palette = 8=#5e4c74
+palette = 9=#ffaadf
+palette = 10=#d8f0d6
+palette = 11=#ffe3f0
+palette = 12=#d7a8ff
+palette = 13=#ffd3eb
+palette = 14=#ead7ff
+palette = 15=#ffffff
+config-file = ~/.config/ghostty/xterm-256-palette.conf
+
+unfocused-split-opacity = 0.7
+window-padding-color = background
+alpha-blending = native
+background-opacity-cells = false
+foreground = #e0def4
+macos-icon-ghost-color = 8200f4
+selection-clear-on-copy = true
+selection-clear-on-typing = false
+unfocused-split-fill = ""
+cursor-click-to-move = true
+quit-after-last-window-closed = true
+adjust-cell-width = 
+adjust-box-thickness = 1
+
+resize-overlay = after-first
+window-step-resize = false
+macos-window-buttons = visible
+
+bold-color = c68523
+font-family-bold = "JetBrainsMono Nerd Font Mono"
+font-thicken-strength = 255
+macos-titlebar-proxy-icon = visible
+macos-secure-input-indication = true
+macos-icon-frame = chrome
+macos-icon = custom-style
+macos-hidden = never
+macos-dock-drop-behavior = new-tab
+macos-custom-icon = rose-pine.icns
+desktop-notifications = false
+palette-harmonious = false

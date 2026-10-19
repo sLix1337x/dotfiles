@@ -1,0 +1,38 @@
+# Identity lives in ~/.gitconfig.local so this file can be shared publicly.
+# Copy .gitconfig.local.example to ~/.gitconfig.local and fill in your details.
+[include]
+	path = ~/.gitconfig.local
+
+[core]
+	pager = delta
+	excludesFile = ~/.gitignore_global
+
+[delta]
+	include = ~/.config/delta/themes/rose-pine.gitconfig
+	features = rose-pine
+	navigate = true
+	line-numbers = true
+	side-by-side = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[pull]
+	rebase = true
+
+[push]
+	default = current
+
+[init]
+	defaultBranch = main
+
+[color]
+	ui = auto
+
+[rerere]
+	enabled = true
+
+[alias]
+	lg = log --oneline --graph --decorate --all
+	st = status -sb
+	undo = reset HEAD~1 --mixed

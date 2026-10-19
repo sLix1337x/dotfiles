@@ -1,0 +1,116 @@
+{
+  "//": "Paths use %USERPROFILE% placeholders. Windows/install.ps1 -AI expands",
+  "//2": "them when it copies this into ~/.claude/settings.json.",
+
+  "cleanupPeriodDays": 14,
+  "env": {
+    "MAX_MCP_OUTPUT_TOKENS": "12000",
+    "BASH_MAX_OUTPUT_LENGTH": "20000",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "200000",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
+  },
+  "model": "opus",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"%USERPROFILE%\\.claude\\hooks\\mode-hook.js\" ponytail hooks ponytail-activate.js",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node \"%USERPROFILE%\\.claude\\hooks\\mode-hook.js\" caveman src hooks caveman-activate.js",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"%USERPROFILE%\\.claude\\hooks\\mode-hook.js\" ponytail hooks ponytail-mode-tracker.js",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node \"%USERPROFILE%\\.claude\\hooks\\mode-hook.js\" caveman src hooks caveman-mode-tracker.js",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"%USERPROFILE%\\.claude\\hooks\\mode-hook.js\" ponytail hooks ponytail-subagent.js",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"%USERPROFILE%\\.claude\\hooks\\read-guard.js\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "python \"%USERPROFILE%\\.claude\\statusline.py\"",
+    "padding": 1
+  },
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "ponytail@ponytail": false,
+    "caveman@caveman": false,
+    "humanizer@humanizer": false
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "humanizer": {
+      "source": {
+        "source": "github",
+        "repo": "blader/humanizer"
+      }
+    }
+  },
+  "outputStyle": "default",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "theme": "dark-daltonized",
+  "editorMode": "vim"
+}
